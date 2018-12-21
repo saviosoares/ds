@@ -20,8 +20,6 @@ import org.springframework.kafka.support.converter.StringJsonMessageConverter;
 @SpringBootApplication
 public class DsApplication {
 
-	private final Logger logger = LoggerFactory.getLogger(DsApplication.class);
-
 	public static void main(String[] args) {
 		SpringApplication.run(DsApplication.class, args);
 	}
@@ -41,16 +39,6 @@ public class DsApplication {
 	@Bean
 	public RecordMessageConverter converter() {
 		return new StringJsonMessageConverter();
-	}
-
-	@KafkaListener(id = "fooGroup", topics = "topic1")
-	public void listen(String foo) {
-		logger.info("Received: " + foo);
-	}
-
-	@KafkaListener(id = "dltGroup", topics = "topic1.DLT")
-	public void dltListen(String in) {
-		logger.info("Received from DLT: " + in);
 	}
 
 	@Bean
