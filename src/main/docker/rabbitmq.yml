@@ -1,4 +1,5 @@
 version: '2'
+
 services:
   rabbitmq:
     image: rabbitmq:3.6.2-management

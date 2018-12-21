@@ -26,10 +26,13 @@ repositories {
 ext['azureVersion'] = '2.0.5'
 
 dependencies {
+	compile("org.springframework.boot:spring-boot-starter-web")
+
 	implementation('org.springframework.boot:spring-boot-starter-amqp')
 	implementation('org.springframework.boot:spring-boot-starter-data-redis')
 	implementation('com.microsoft.azure:azure-spring-boot-starter')
 	implementation('org.springframework.kafka:spring-kafka')
+
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
 	testImplementation('org.springframework.kafka:spring-kafka-test')
 }
